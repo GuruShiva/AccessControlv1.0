@@ -1,4 +1,4 @@
-__author__ = 'root'
+__author__ = 'GuruShiva'
 
 import time
 import subprocess
@@ -20,7 +20,6 @@ def shutdown ():
        sys.stdout.write(formatTime(x))
     if (formatTime(x)) == "00:00":
         print("\nProcess Completed!")
-        #subprocess.call(["gnome-screensaver-command", "--lock"])
         #subprocess.call(["shutdown", "-h", "now"])
 
 
