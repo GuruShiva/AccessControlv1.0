@@ -2,9 +2,15 @@ The AccessControl is a simple python program which we run will ask for an access
 
 The python script in found on 'main.py'
 
+For precautionary reasons- In order for the shutdown function to work- you are required to edit the code by following the below steps:
+
+Step1: Locate the shutdown () function.
+Step2: Locate the subprocess.call- #subprocess.call(["shutdown", "-h", "now"]).
+Step3: Uncomment it. This the external call function that is required to shutdown the system.
+
 Note: The specified folder must first exist in the path mentioned for certain of the code's functions to work. 
 
-In any case- the shutdown function will work. I would recommend for you to try on a Linux Virtual Machine.
+I would recommend for you to try on a Linux Virtual Machine.
 
 The AccessControl will be worked on and more functions will be added. If anyone has any ideas on how to improve the code- I would really appreciate it. Cheers.
 
