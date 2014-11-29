@@ -1,0 +1,11 @@
+The AccessControl is a simple python program which we run will ask for an access code. If the access code is right- it will print 'Access Granted'. If the wrong access code is given, it will deleted a certain specified folder and then shutdown your system. This script is currently written for Linux OS.
+
+The python script in found on 'main.py'
+
+Note: The specified folder must first exist in the path mentioned for certain of the code's functions to work. 
+
+In any case- the shutdown function will work. I would recommend for you to try on a Linux Virtual Machine.
+
+The AccessControl will be worked on and more functions will be added. If anyone has any ideas on how to improve the code- I would really appreciate it. Cheers.
+
+
