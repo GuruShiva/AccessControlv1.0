@@ -20,6 +20,8 @@ def shutdown ():
     if (formatTime(x)) == "00:00":
         print("\nProcess Completed!")
         #subprocess.call(["gnome-screensaver-command", "--lock"])
+        #subprocess.call(["shutdown", "-h", "now"])
+
 
 def formatTime(x):
     minutes, seconds_rem = divmod(x, 60)
@@ -38,8 +40,20 @@ def process_load():
         sleep(0.25)
 
 def del_file():
-    for name in glob.glob('/root/Classified'):
-        print ("\nClassified Files Found: " + name)
+
+ name = glob.glob('/root/Classified')
+
+ if not name:
+     print ("Checking for Classified Files...")
+     process_load()
+     print ("\nClassified files not found!")
+     print ("Halting Shutdown Procedure!")
+     sys.exit("System is secured!")
+
+ else:
+
+     for name in glob.glob('/root/Classified'):
+        print ("\nClassified Files Found @: " + name)
         print ("Deleting Classified Information!")
         process_load()
         do_task()
@@ -61,8 +75,9 @@ def main():
 
     access= str(input("Enter your access code:"))
 
-    if access != 'guru12':
+    if access != '12345':
         print ("Access Denied!")
+        print("System Breached!")
         del_file()
         print("")
         print ("\nInitiating Shutdown Protocol")
