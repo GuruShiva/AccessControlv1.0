@@ -10,6 +10,7 @@ import shutil
 from time import sleep
 
 
+
 def shutdown ():
     print("")
     print ("\nThe system is now shutting down")
@@ -42,15 +43,16 @@ def process_load():
 def del_file():
 
  name = glob.glob('/root/Classified')
+ print ("Checking for Classified Files...")
+ process_load()
 
  if not name:
-     print ("Checking for Classified Files...")
-     process_load()
-     print ("\nClassified files not found!")
+     print ("\nClassified files not found.")
      print ("Halting Shutdown Procedure!")
-     sys.exit("System is secured!")
+     sys.exit("\nSystem is secured!")
 
  else:
+
 
      for name in glob.glob('/root/Classified'):
         print ("\nClassified Files Found @: " + name)
@@ -60,12 +62,23 @@ def del_file():
         shutil.rmtree(name)
 
 def file_list():
-    for name in glob.glob('/root/Classified'):
-        print ("Securing Files...")
-        do_task()
-        process_load()
-        print("\nFiles Found:" + name)
-        print("Files Secured!")
+    name = glob.glob('/root/Classified')
+    print ("Checking for Classified Files...")
+    process_load()
+
+    if not name:
+         print ("\nClassified Files not found ")
+         sys.exit("\nSystem is secured!")
+
+
+
+
+    else:
+        for name in glob.glob('/root/Classified'):
+          print ("\nClassified Files Found @: " + name)
+          print ("\nSecuring Classified Files...")
+          process_load()
+          print ("\nSystem is secured!")
 
 
 
